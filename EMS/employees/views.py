@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from .models import Employee
 from .forms import EmployeeForm
 
@@ -33,3 +34,6 @@ def employee_delete(request, pk):
         employee.delete()
         return redirect('employee_list')
     return render(request, 'employees/employee_confirm_delete.html', {'employee': employee})
+
+def video_upload(request):
+    return HttpResponse("Lets create a subtittle.")
